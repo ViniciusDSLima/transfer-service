@@ -6,13 +6,14 @@
   "type": "commonjs",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/infra/server.ts",
+    "start": "nodemon src/infrastructure/index.ts",
     "lint": "eslint src/**/*.ts",
     "fix": "eslint --fix .",
     "prisma:dev": "npx prisma migrate dev --name"
   },
   "dependencies": {
     "@prisma/client": "5.14.0",
+    "bcrypt": "^5.1.1",
     "fastify": "^4.27.0",
     "fastify-cli": "^6.1.1",
     "uuid": "^9.0.1"
