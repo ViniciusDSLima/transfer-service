@@ -8,9 +8,11 @@
   "scripts": {
     "start": "nodemon src/infra/server.ts",
     "lint": "eslint src/**/*.ts",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "prisma:dev": "npx prisma migrate dev --name"
   },
   "dependencies": {
+    "@prisma/client": "5.14.0",
     "fastify": "^4.27.0",
     "fastify-cli": "^6.1.1",
     "uuid": "^9.0.1"
@@ -22,6 +24,7 @@
     "@typescript-eslint/parser": "^7.9.0",
     "eslint": "^8.57.0",
     "nodemon": "^3.1.0",
+    "prisma": "5.14.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
