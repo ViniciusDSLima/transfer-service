@@ -11,3 +11,14 @@ services:
       POSTGRES_USER: postgres
     ports:
       - "5432:5432"
+
+  web:
+    build: .
+    container_name: transferService
+    depends_on:
+      - database
+    ports:
+      - "3030:3030"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/bank?schema=public
+
