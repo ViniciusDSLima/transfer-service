@@ -8,15 +8,31 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  fullName  String
-  document  String   @unique
-  email     String   @unique
-  password  String
-  isSeller  Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String     @id @default(uuid())
+  fullName         String
+  document         String     @unique
+  email            String     @unique
+  password         String
+  isSeller         Boolean    @default(false)
+  balance          Int        @default(0)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  sentTransfer     Transfer[] @relation("senderTransfer")
+  receivedTransfer Transfer[] @relation("ReceiverTransfer")
 
   @@index([email])
   @@map("users")
+}
+
+model Transfer {
+  id         String   @id @default(uuid())
+  amount     Int
+  sender     User     @relation("senderTransfer", fields: [senderId], references: [id])
+  senderId   String
+  receiver   User     @relation("ReceiverTransfer", fields: [receiverId], references: [id])
+  receiverId String
+  createdAt  DateTime @default(now())
+
+  @@index(fields: [senderId, receiverId])
+  @@map("transfers")
 }
