@@ -5,6 +5,7 @@ Projeto com o intuito de simular transferencias entre clientes (lojistas e nao l
         Criacao do usuario
 
 Informacoes: Os usuarios podem se cadastrar para realizar as operacoes com os seguintes campos {fullName, document, email, password, seller(true/false), balance}, os lojistas somente recebem dinheiro
+
 Endpoint: POST /createUser
 
 Body: {fullName: string, document: string. email: string, password: string, isSellet: string. balance: number}
@@ -16,6 +17,7 @@ Realizo uma verificacao antes de realizar a transferencia e caso o usuario que q
 Realizo a verificacao se o usuario existe na base de dados utilizando o email e o document dele.
 Realizo a verificacao sobre o saldo atual da carteira do usuario antres de fazer a transferencia.
 Utilizo o conceito de transaction nas tranferencias o que da seguranca financeira para os usuarios do sistema.
+
 Endpoint: POST /transfer
 
 Body: {anount: number, senderId: string. receiverId: string}
