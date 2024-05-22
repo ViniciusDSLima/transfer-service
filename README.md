@@ -20,7 +20,7 @@ Endpoint: POST /transfer
 
 Body: {anount: number, senderId: string. receiverId: string}
 
-Pontos de Melhoria
+         Pontos de melhoria
 
 Poderia melhorar na comunicacao entre as camadas utilizando algum padrao mais proveitoso em relacao ao factory, por exemplo o Facade.
 
@@ -32,7 +32,7 @@ Poderia ter melhorado nas mensagens de commits e ter reduzido a quantidade de co
 
 Outra pratica que poderia ser melhorada era utilizar mais branchs.
 
-Como executar o projeto na sua maquina? 
+         Como executar o projeto na sua maquina? 
 
 Clone o repositorio;
 
