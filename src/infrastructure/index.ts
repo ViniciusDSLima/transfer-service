@@ -7,8 +7,6 @@ const fastify = Fastify({
 });
 const server = async() => {
 
-
-
     const optionsObject = {
         port: Number(process.env.PORT) || 3000,
         host: "0.0.0.0"
@@ -18,10 +16,7 @@ const server = async() => {
 
     await transferRouter(fastify, optionsObject);
 
-
     await fastify.listen(optionsObject);
-
-
 };
 
 server();
