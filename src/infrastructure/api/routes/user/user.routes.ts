@@ -7,7 +7,7 @@ import {FindUserFactory} from "../../../../application/user/factory/findUser.fac
 export const userRoutes: FastifyPluginAsync = async (fastify: FastifyInstance) => {
     fastify.post(
         "/createUser", async (req,reply) => {
-             const createUserUseCase = new CreateUserUseCase(new UserRepository(), FindUserFactory());
+            const createUserUseCase = new CreateUserUseCase(new UserRepository(), FindUserFactory());
 
                  const data = req.body as InputUserDTO;
 
