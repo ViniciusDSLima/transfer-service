@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           source: ".,!node_modules"
-          target: "~/bff_admin"
+          target: "~/transfer-service"
 
       - name: Install application dependencies and restart PM2
         uses: appleboy/ssh-action@master
@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ubuntu/bff_admin
+            cd /home/ubuntu/transfer-service
             rm -rf yarn.lock
             rm -rf node_modules
             yarn
